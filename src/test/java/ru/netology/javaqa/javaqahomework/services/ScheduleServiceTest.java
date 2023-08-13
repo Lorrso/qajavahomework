@@ -6,10 +6,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 public class ScheduleServiceTest {
-
       @ParameterizedTest
       @CsvFileSource(files="src/test/resources/schedule.csv")
-      public void testName(int expected, int income, int expenses, int threshold) {
+      public void calculateTheNumberOfRestDays(int expected, int income, int expenses, int threshold) {
             ScheduleService service = new ScheduleService();
 
             int actual = service.calculate(income, expenses, threshold);
